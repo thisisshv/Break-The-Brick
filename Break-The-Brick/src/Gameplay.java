@@ -19,7 +19,7 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
     private int totalBricks = 21;
 
     private Timer timer;
-    private int delay = 8;
+    private int delay = 1;
 
     // Default position of the player
     private int playerX = 310;
@@ -37,7 +37,6 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
         map = new Map(3, 7);
         addKeyListener(this);
         setFocusable(true);
-        setFocusTraversalKeysEnabled(false);
         timer = new Timer(delay, this);
         timer.start();
     }
@@ -90,6 +89,7 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
             g.drawString("Press Enter to Restart", 280, 340);
         }
 
+        // You won
         if (totalBricks <= 0) {
             play = false;
             ballXdir = 0;
