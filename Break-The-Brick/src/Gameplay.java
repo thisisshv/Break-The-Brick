@@ -3,6 +3,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Random;
+
 import javax.swing.Timer;
 import java.awt.Color;
 import java.awt.Font;
@@ -24,8 +26,10 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
     // Default position of the player
     private int playerX = 310;
 
-    // Default position of the ball
-    private int ballposX = 120;
+    // Random position of the ball
+    Random random = new Random();
+    int n = random.nextInt(500);
+    private int ballposX = n;
     private int ballposY = 350;
     private int ballXdir = -1;
     private int ballYdir = -2;
